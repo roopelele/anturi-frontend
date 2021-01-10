@@ -1,5 +1,6 @@
 import './App.css'
 import React from 'react'
+import Graph from './components/chart.js'
 
 const App = () => {
   return (
@@ -10,17 +11,11 @@ const App = () => {
       <div>
         <p>Kys</p>
       </div>
-      {<Chart/>}
+      {<Graph/>}
     </>
   )
 }
 
-const Chart = () => {
-  return (
-    <>
-      <h2>Here is your chart asshole</h2>
-    </>
-  )
-}
 
 export default App
+
