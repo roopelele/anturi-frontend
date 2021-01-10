@@ -23,5 +23,4 @@ const Chart = () => {
   )
 }
 
-
 export default App
