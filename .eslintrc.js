@@ -43,7 +43,7 @@ module.exports = {
             "error", { "before": true, "after": true }
         ],
         "no-console": 0,
-        "no-unreachable": 2,
+        "no-unreachable": 0,
         "react/prop-types": 0
     }
 }
