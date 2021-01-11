@@ -72,11 +72,21 @@ const App = () => {
 
   return (
     <>
-      <div>
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
         <CurrentTemperatureDisplay temp={currentTemp}/>
       </div>
-      {<Graph todayTemp={todayTemp}/>}
-      {<TimeButtons timeButtonEventHandler={timeButtonEventHandler}/>}
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
+        {<Graph todayTemp={todayTemp}/>}
+        {<TimeButtons timeButtonEventHandler={timeButtonEventHandler}/>}
+      </div>
     </>
   )
 }
