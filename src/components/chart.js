@@ -2,7 +2,6 @@ import React from 'react'
 import { Line } from 'react-chartjs-2'
 
 
-
 const Graph = ({ todayTemp }) => {
   if( todayTemp === null){
     return(
@@ -36,7 +35,6 @@ const Graph = ({ todayTemp }) => {
 
   return (
     <>
-      <h1>Here is your chart</h1>
       <div className="chart">
         <Line data={data} options={options} />
       </div>

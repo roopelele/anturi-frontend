@@ -1,10 +1,10 @@
 import React from 'react'
 
 const CurrentTemperatureDisplay = ({ temp }) => {
-  console.log(temp)
+  console.log('temperature value', temp)
   if(temp !== -999){
     return (
-      <h1>The Current Temperature Is {temp} Celsius</h1>
+      <h1>Temperature: {temp} ℃</h1>
     )
   }
   else{

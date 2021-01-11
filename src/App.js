@@ -19,8 +19,6 @@ function formatDate(date) {
   return [year, month, day].join('-')
 }
 
-
-
 const App = () => {
   const [currentTemp, setCurrentTemp] = useState(-999)
   const [todayTemp, setTodayTemp] = useState(null)
@@ -28,24 +26,32 @@ const App = () => {
   // Get current temperature
   useEffect(() => {
     temperatureService.getCurrent().then(data => {
-      const temp = data.data.values[0].value
-      setCurrentTemp(temp)
+      if(data.data.values.length > 0 || !data.data.success) {
+        const temp = data.data.values[0].value
+        setCurrentTemp(temp)
+      }
+      else {
+        console.log('no data')
+      }
     })
   }, [])
 
   // Get todays temperatures
   useEffect(() => {
     temperatureService.getToday().then(data => {
-      const temp = data.data[0]
-      setTodayTemp(temp)
-      console.log('Current temp:', todayTemp)
+      if(data.data.length > 0) {
+        const temp = data.data[0]
+        setTodayTemp(temp)
+      }
+      else {
+        console.log('no data')
+      }
     })
   }, [])
 
   const timeButtonEventHandler = (e) => {
     e.preventDefault()
     console.log('Button pressed')
-    console.log(e)
     const time = e.target.value
 
     console.log(time)
@@ -54,19 +60,20 @@ const App = () => {
     const end = formatDate(date.setDate(date.getDate - time))
 
     temperatureService.getHistory(start, end).then(data => {
-      const temp = data.data[0]
-      setTodayTemp(temp)
+      if(data.data.length > 0) {
+        const temp = data.data[0]
+        setTodayTemp(temp)
+      }
+      else {
+        console.log('no data')
+      }
     })
   }
 
-  console.log(currentTemp)
   return (
     <>
       <div>
         <CurrentTemperatureDisplay temp={currentTemp}/>
-      </div>
-      <div>
-        <p>Kys</p>
       </div>
       {<Graph todayTemp={todayTemp}/>}
       {<TimeButtons timeButtonEventHandler={timeButtonEventHandler}/>}

@@ -9,9 +9,12 @@ const Button = ({ text, value, eventHandler }) => {
 
 const TimeButtons = ({ timeButtonEventHandler }) => {
   return (
+    <></>
+  )
+  // TODO fix CORS
+  return (
     <>
       <Button text={'1 year'} value={365} eventHandler={timeButtonEventHandler}/>
-      <Button text={'debug'} eventHandler={console.log('Hello')}/>
     </>
   )
 }
