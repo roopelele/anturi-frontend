@@ -44,6 +44,7 @@ module.exports = {
         ],
         "no-console": 0,
         "no-unreachable": 0,
+        "no-undef": 0,
         "react/prop-types": 0
     }
 }

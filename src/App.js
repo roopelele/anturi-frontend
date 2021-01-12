@@ -4,6 +4,7 @@ import Graph from './components/chart.js'
 import TimeButtons from './components/buttons.js'
 import CurrentTemperatureDisplay from './components/current.js'
 import temperatureService from './services/temperatures.js'
+import config from './utils/config'
 
 function formatDate(date) {
   var d = new Date(date),
@@ -31,7 +32,7 @@ const App = () => {
         setCurrentTemp(temp)
       }
       else {
-        console.log('no data')
+        console.log(config.messages.noData)
       }
     })
   }, [])
@@ -44,7 +45,7 @@ const App = () => {
         setTodayTemp(temp)
       }
       else {
-        console.log('no data')
+        console.log(config.messages.noData)
       }
     })
   }, [])
@@ -65,25 +66,17 @@ const App = () => {
         setTodayTemp(temp)
       }
       else {
-        console.log('no data')
+        console.log(config.messages.noData)
       }
     })
   }
 
   return (
     <>
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}>
+      <div style={config.styles.center}>
         <CurrentTemperatureDisplay temp={currentTemp}/>
       </div>
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}>
+      <div style={config.styles.center}>
         {<Graph todayTemp={todayTemp}/>}
         {<TimeButtons timeButtonEventHandler={timeButtonEventHandler}/>}
       </div>

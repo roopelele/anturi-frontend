@@ -1,6 +1,6 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2'
-import colors from '../utils/colors'
+import config from '../utils/config'
 
 const Graph = ({ todayTemp }) => {
   if( todayTemp === null){
@@ -19,10 +19,9 @@ const Graph = ({ todayTemp }) => {
         label: 'Temperatures',
         data: temps,
         fill: false,
-        backgroundColor: 'rgb(0, 97, 189)',
-        borderColor: 'rgba(0, 97, 189, 0.5)',
-        pointRadius: 1,
-        lineTension: 0.4,
+        backgroundColor: config.colors.background,
+        borderColor: config.colors.border,
+        pointRadius: config.graph.pointRadius,
       },
     ],
   }
@@ -37,25 +36,25 @@ const Graph = ({ todayTemp }) => {
       yAxes: [
         {
           ticks: {
-            suggestedMin: 15.0,
-            suggestedMax: 30,
+            suggestedMin: config.graph.yMin,
+            suggestedMax: config.graph.yMax,
           },
           gridLines: {
-            color: colors.gridColor,
+            color: config.colors.grid,
           }
         }
       ],
       xAxes: [
         {
           gridLines: {
-            color: colors.gridColor,
+            color: config.colors.grid,
           }
         }
       ]
     },
     legend: {
-      position: 'top',
-      align: 'start',
+      position: config.graph.legend.pos,
+      align: config.graph.legend.alignment,
     }
   }
 

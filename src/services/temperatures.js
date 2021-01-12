@@ -1,16 +1,13 @@
 import axios from 'axios'
-const currentUrl = 'http://192.168.100.12:5000/current'
-const historyUrl = 'http://192.168.100.12:5000/history'
-const getDataUrl = 'http://192.168.100.12:5000/get_data'
-
+import config from '../utils/config'
 
 const getCurrent = () => {
-  const req = axios.get(currentUrl)
+  const req = axios.get(config.urls.currentUrl)
   return req.then(response => response.data)
 }
 
 const getToday = () => {
-  const req = axios.get(historyUrl)
+  const req = axios.get(config.urls.historyUrl)
   return req.then(response => response.data)
 }
 
@@ -20,7 +17,7 @@ const getHistory = ({ start, end }) => {
     end: end,
   }
 
-  const req = axios.post(getDataUrl, historyObject)
+  const req = axios.post(config.urls.getDataUrl, historyObject)
   console.log(req)
   return req.then(response => response.data)
 }
