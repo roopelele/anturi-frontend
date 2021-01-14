@@ -21,14 +21,14 @@ function formatDate(date) {
 }
 
 const App = () => {
-  const [currentTemp, setCurrentTemp] = useState(-999)
+  const [currentTemp, setCurrentTemp] = useState([-999])
   const [todayTemp, setTodayTemp] = useState(null)
 
   // Get current temperature
   useEffect(() => {
     temperatureService.getCurrent().then(data => {
       if(data.data.values.length > 0 || !data.data.success) {
-        const temp = data.data.values[0].value
+        const temp = data.data.values
         setCurrentTemp(temp)
       }
       else {
@@ -73,6 +73,9 @@ const App = () => {
 
   return (
     <>
+      <div style={config.styles.center}>
+        <h1>Temperatures:</h1>
+      </div>
       <div style={config.styles.center}>
         <CurrentTemperatureDisplay temp={currentTemp}/>
       </div>

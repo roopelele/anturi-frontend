@@ -1,17 +1,25 @@
 import React from 'react'
 
 const CurrentTemperatureDisplay = ({ temp }) => {
-  console.log('temperature value', temp)
-  if(temp !== -999){
+  if(temp.length === 0) {
+    console.log('No temperature data available')
     return (
-      <h1>Temperature: {temp} ℃</h1>
+      <h1>
+        No temperature available
+      </h1>
     )
   }
-  else{
-    return (
-      <h1>No Temperature available</h1>
-    )
-  }
+  return (
+    <>
+      <ul>
+        {temp.map( x =>
+          <li key={x.name}>
+            {x.value} ℃
+          </li>
+        )}
+      </ul>
+    </>
+  )
 }
 
 export default CurrentTemperatureDisplay

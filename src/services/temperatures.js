@@ -18,7 +18,6 @@ const getHistory = ({ start, end }) => {
   }
 
   const req = axios.post(config.urls.getDataUrl, historyObject)
-  console.log(req)
   return req.then(response => response.data)
 }
 
