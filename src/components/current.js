@@ -1,22 +1,10 @@
 import React from 'react'
 
-const CurrentTemperatureDisplay = ({ temp }) => {
-  if(temp.length === 0) {
-    console.log('No temperature data available')
-    return (
-      <h1>
-        No temperature available
-      </h1>
-    )
-  }
+const CurrentTemperatureDisplay = ({ data, names }) => {
   return (
     <>
       <ul>
-        {temp.map( x =>
-          <li key={x.name}>
-            {x.value} ℃
-          </li>
-        )}
+        {data.map(x => <li key={x.name}> {names.find(y => y.id === x.name) === null ? 'null' : names.find(y => y.id === x.name).name}: {x.value} </li> ) }
       </ul>
     </>
   )
