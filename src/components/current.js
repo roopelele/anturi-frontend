@@ -1,6 +1,11 @@
 import React from 'react'
 
 const CurrentTemperatureDisplay = ({ data, names }) => {
+  if (names.length === 0) {
+    return (
+      <></>
+    )
+  }
   return (
     <>
       <ul>

@@ -1,8 +1,7 @@
 const config = {
   urls: {
-    currentUrl: 'http://192.168.100.12:5000/current',
-    historyUrl: 'http://192.168.100.12:5000/history',
-    getDataUrl: 'http://192.168.100.12:5000/get_data',
+    currentUrl: 'http://192.168.100.11/data/current',
+    historyUrl: 'http://192.168.100.11/data/history',
   },
   colors: {
     grid: '#224A70',

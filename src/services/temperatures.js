@@ -11,6 +11,7 @@ const getToday = () => {
   return req.then(response => response.data)
 }
 
+/*
 const getHistory = ({ start, end }) => {
   const historyObject = {
     start: start,
@@ -20,5 +21,5 @@ const getHistory = ({ start, end }) => {
   const req = axios.post(config.urls.getDataUrl, historyObject)
   return req.then(response => response.data)
 }
-
-export default { getCurrent, getToday, getHistory }
+*/
+export default { getCurrent, getToday }
