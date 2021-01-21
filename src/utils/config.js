@@ -1,7 +1,7 @@
 const config = {
   urls: {
-    currentUrl: 'http://192.168.100.11/data/current',
-    historyUrl: 'http://192.168.100.11/data/history',
+    currentUrl: 'http://88.193.157.56/data/current',
+    historyUrl: 'http://88.193.157.56/data/history',
   },
   colors: {
     grid: '#224A70',
