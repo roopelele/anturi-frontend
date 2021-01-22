@@ -1,8 +1,8 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React from 'react'
+import { Switch, Route } from 'react-router-dom'
 
-import MainPage from '../pages/mainPage';
-import TemperaturePage from '../pages/temperaturePage';
+import MainPage from '../pages/mainPage'
+import TemperaturePage from '../pages/temperaturePage'
 
 const Main = () => {
   return (
@@ -10,7 +10,7 @@ const Main = () => {
       <Route exact path='/' component={MainPage}></Route>
       <Route exact path='/temperatures' component={TemperaturePage}></Route>
     </Switch>
-  );
+  )
 }
 
-export default Main;
+export default Main
