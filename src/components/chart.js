@@ -60,7 +60,7 @@ const Graph = ({ graphValues, names }) => {
 
   return (
     <>
-      <div className="chart">
+      <div className="Chart">
         <Line data={data} options={options} />
       </div>
     </>
