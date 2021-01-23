@@ -2,21 +2,21 @@ import React from 'react'
 import { Line } from 'react-chartjs-2'
 import config from '../utils/config'
 
-const Graph = ({ todayTemp }) => {
-  if( todayTemp === null){
+const Graph = ({ graphValues, names }) => {
+  if( graphValues === null){
     return(
       <>
         <h2>Todays temperature history not found</h2>
       </>
     )
   }
-  const times = todayTemp.times
-  const temps = todayTemp.temps
+  const times = graphValues.times
+  const temps = graphValues.temps
   const data = {
     labels: times,
     datasets: [
       {
-        label: 'Temperatures',
+        label: names.find(y => y.id === graphValues.name) === null ? 'null' : names.find(y => y.id === graphValues.name).name,
         data: temps,
         fill: false,
         backgroundColor: config.colors.background,

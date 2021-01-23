@@ -1,27 +1,20 @@
 import React from 'react'
 
-/*
 const Button = ({ text, value, eventHandler }) => {
   return(
-    <button value={value} onClick={e => eventHandler(e)}>{text}</button>
+    <button value={value} className='Button' onClick={e => eventHandler(e)}>{text}</button>
   )
 }
-*/
 
-const TimeButtons = ({ timeButtonEventHandler }) => {
-  console.log('[DEBUG]', timeButtonEventHandler)
-  return (
-    <></>
-  )
-  // TODO fix CORS
-  /*
+const GraphButtons = ({ buttonEventHandler }) => {
   return (
     <>
-      <Button text={'1 year'} value={365} eventHandler={timeButtonEventHandler}/>
+      <Button text={'previous'} value={-1} eventHandler={buttonEventHandler}/>
+      {' '}
+      <Button text={'next'} value={1} eventHandler={buttonEventHandler}/>
     </>
   )
-  */
 }
 
 
-export default TimeButtons
+export default GraphButtons

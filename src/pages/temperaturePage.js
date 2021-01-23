@@ -1,29 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import Graph from '../components/chart.js'
-import TimeButtons from '../components/buttons.js'
+import GraphButtons from '../components/buttons.js'
 import CurrentTemperatureDisplay from '../components/current.js'
 import temperatureService from '../services/temperatures.js'
 import config from '../utils/config'
 
 
-function formatDate(date) {
-  var d = new Date(date),
-  month = '' + (d.getMonth() + 1),
-  day = '' + d.getDate(),
-  year = d.getFullYear()
-
-  if (month.length < 2)
-    month = '0' + month
-  if (day.length < 2)
-    day = '0' + day
-
-  return [year, month, day].join('-')
-}
-
 const TemperaturePage = () => {
   const [currentData, setCurrentData] = useState([{ name: '', temp: -999 }])
   const [names, setNames] = useState([])
-  const [todayTemp, setTodayTemp] = useState(null)
+  const [history, setHistory] = useState([null])
+  const [graphValue, setGraphValue] = useState(null)
+  const [listIndex, setListIndex] = useState(0)
 
   // Get current temperature
   useEffect(() => {
@@ -42,8 +30,8 @@ const TemperaturePage = () => {
   useEffect(() => {
     temperatureService.getToday().then(data => {
       if(data.data.length > 0) {
-        const temp = data.data[0]
-        setTodayTemp(temp)
+        setHistory(data.data)
+        setGraphValue(data.data[listIndex])
       }
       else {
         console.log(config.messages.noData)
@@ -51,25 +39,19 @@ const TemperaturePage = () => {
     })
   }, [])
 
-  const timeButtonEventHandler = (e) => {
+  const buttonEventHandler = (e) => {
     e.preventDefault()
     console.log('Button pressed')
-    const time = e.target.value
-
-    console.log(time)
-    const date = new Date()
-    const start = formatDate(date)
-    const end = formatDate(date.setDate(date.getDate - time))
-
-    temperatureService.getHistory(start, end).then(data => {
-      if(data.data.length > 0) {
-        const temp = data.data[0]
-        setTodayTemp(temp)
-      }
-      else {
-        console.log(config.messages.noData)
-      }
-    })
+    const change = e.target.value
+    var tmp = listIndex + parseInt(change)
+    if (tmp >= history.length) {
+      tmp = 0
+    }
+    else if (tmp < 0) {
+      tmp = history.length - 1
+    }
+    setListIndex(tmp)
+    setGraphValue(history[tmp])
   }
 
   return (
@@ -83,8 +65,11 @@ const TemperaturePage = () => {
         <CurrentTemperatureDisplay data={currentData} names={names}/>
       </div>
       <div style={config.styles.center}>
-        {<Graph todayTemp={todayTemp}/>}
-        {<TimeButtons timeButtonEventHandler={timeButtonEventHandler}/>}
+        {<Graph graphValues={graphValue} names={names}/>}
+      </div>
+      {' '}
+      <div>
+        {<GraphButtons buttonEventHandler={buttonEventHandler}/>}
       </div>
     </>
   )
