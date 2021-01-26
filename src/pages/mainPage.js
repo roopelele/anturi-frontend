@@ -20,7 +20,11 @@ const MainPage = () => {
         <div><marquee direction = "right" scrollamount='5'><img src={pepelaugh}/></marquee></div>
         <div><marquee direction = "left" scrollamount='6'><img src={poggers}/></marquee></div>
         <div><marquee direction = "right" scrollamount='7'><img src={pepega}/></marquee></div>
-        <div><marquee direction = "left" scrollamount='8'><img src={monkas}/></marquee></div>
+        <div>
+          <marquee direction = "left" scrollamount='8'>
+            <a href='roopelele.fi/temperatures'><img src={monkas}/></a>
+          </marquee>
+        </div>
         <div><marquee direction = "right" scrollamount='9'><img src={peepohappy}/></marquee></div>
         <div><marquee direction = "left" scrollamount='10'><img src={monkahmm}/></marquee></div>
       </div>
