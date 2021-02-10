@@ -2,7 +2,7 @@ const config = {
   urls: {
     currentUrl: 'http://88.193.157.56/data/current',
     historyUrl: 'http://88.193.157.56/data/history',
-    gitLabUrl: 'https://github.com/roopelele',
+    gitHubUrl: 'https://github.com/roopelele',
   },
   colors: {
     grid: '#224A70',
