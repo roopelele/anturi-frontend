@@ -1,7 +1,7 @@
 const config = {
   urls: {
-    currentUrl: 'http://88.193.157.56/data/current',
-    historyUrl: 'http://88.193.157.56/data/history',
+    currentUrl: 'https://roopelele.fi/data/current',
+    historyUrl: 'https://roopelele.fi/data/history',
     gitHubUrl: 'https://github.com/roopelele',
   },
   colors: {
