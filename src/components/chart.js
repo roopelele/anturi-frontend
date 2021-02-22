@@ -3,7 +3,14 @@ import { Line } from 'react-chartjs-2'
 import config from '../utils/config'
 
 const Graph = ({ graphValues, names }) => {
-  if( graphValues === null){
+  if( graphValues === null || names === null){
+    return(
+      <>
+        <h2>Todays temperature history not found</h2>
+      </>
+    )
+  }
+  if (graphValues.times.length === 0 || graphValues.temps.length === 0 || names.length === 0) {
     return(
       <>
         <h2>Todays temperature history not found</h2>

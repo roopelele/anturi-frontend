@@ -1,8 +1,13 @@
 import React from 'react'
 
 const CurrentTemperatureDisplay = ({ data, names }) => {
-  if (names.length === 0) {
-    return (
+  if( data === null || names === null){
+    return(
+      <></>
+    )
+  }
+  if (data.length === 0 || names.length === 0) {
+    return(
       <></>
     )
   }

@@ -3,6 +3,7 @@ const config = {
     currentUrl: 'https://roopelele.fi/data/current',
     historyUrl: 'https://roopelele.fi/data/history',
     gitHubUrl: 'https://github.com/roopelele',
+    mainUrl: 'https://roopelele.fi/',
   },
   colors: {
     grid: '#224A70',
