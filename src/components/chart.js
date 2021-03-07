@@ -2,35 +2,37 @@ import React from 'react'
 import { Line } from 'react-chartjs-2'
 import config from '../utils/config'
 
-const Graph = ({ graphValues, names }) => {
-  if( graphValues === null || names === null){
+const Graph = ({ values, names }) => {
+  if (names === null || values === null || typeof(values) === 'undefined'){
     return(
       <>
         <h2>Todays temperature history not found</h2>
       </>
     )
   }
-  if (graphValues.times.length === 0 || graphValues.temps.length === 0 || names.length === 0) {
+  if (values[0].times.length === 0 || values[0].temps.length === 0 || names.length === 0) {
     return(
       <>
         <h2>Todays temperature history not found</h2>
       </>
     )
   }
-  const times = graphValues.times
-  const temps = graphValues.temps
+  const times = values[0].times
+
+  const datasets = values.map((graphValues, idx) => {
+    return {
+      label: names.find(y => y.id === graphValues.name) === null ? 'null' : names.find(y => y.id === graphValues.name).name,
+      data: graphValues.temps,
+      fill: false,
+      backgroundColor: config.colors.background[idx % config.colors.background.length],
+      borderColor: config.colors.border[idx % config.colors.background.length],
+      pointRadius: config.graph.pointRadius,
+    }
+  })
+
   const data = {
     labels: times,
-    datasets: [
-      {
-        label: names.find(y => y.id === graphValues.name) === null ? 'null' : names.find(y => y.id === graphValues.name).name,
-        data: temps,
-        fill: false,
-        backgroundColor: config.colors.background,
-        borderColor: config.colors.border,
-        pointRadius: config.graph.pointRadius,
-      },
-    ],
+    datasets: datasets
   }
 
   const options = {

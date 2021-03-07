@@ -17,3 +17,37 @@ code {
 ul li{
   font-size:30px;
 }
+
+.App {
+  text-align: center;
+  height: 50% !important;
+}
+
+.Chart {
+  width: 60%;
+  background-color: #002242;
+}
+
+.Button {
+  appearance: 'ghost';
+  background-color: #002242;
+  color: #0061BD;
+  font-size: calc(10px + 2vmin);
+  border: black;
+  padding: 10px 10px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+  width: 200px;
+}
+
+.Footer{
+  text-align: center;
+  position: fixed;
+  background-color: #002242;
+  bottom: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+}
+

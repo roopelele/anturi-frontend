@@ -1,4 +1,4 @@
-import './App.css'
+import './index.css'
 import React from 'react'
 import Main from './main'
 import Footer from './components/footer'

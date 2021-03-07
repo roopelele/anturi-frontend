@@ -7,8 +7,14 @@ const config = {
   },
   colors: {
     grid: '#224A70',
-    background: 'rgb(0, 97, 189)',
-    border: 'rgba(0, 97, 189, 0.5)',
+    background: [
+      'rgb(0, 97, 189)',
+      'rgb(50, 130, 0)',
+    ],
+    border: [
+      'rgba(0, 97, 189, 0.5)',
+      'rgba(50, 130, 0, 0.5)',
+    ]
   },
   graph: {
     yMin: 15.0,
