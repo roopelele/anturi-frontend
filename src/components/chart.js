@@ -10,6 +10,13 @@ const Graph = ({ values, names }) => {
       </>
     )
   }
+  if (names.length === 0 || values.length === 0) {
+    return(
+      <>
+        <h2>Todays temperature history not found</h2>
+      </>
+    )
+  }
   if (values[0].times.length === 0 || values[0].temps.length === 0 || names.length === 0) {
     return(
       <>
@@ -18,7 +25,6 @@ const Graph = ({ values, names }) => {
     )
   }
   const times = values[0].times
-
   const datasets = values.map((graphValues, idx) => {
     return {
       label: names.find(y => y.id === graphValues.name) === null ? 'null' : names.find(y => y.id === graphValues.name).name,

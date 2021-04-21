@@ -1,7 +1,8 @@
 const config = {
   urls: {
     currentUrl: 'https://roopelele.fi/data/temperature/current.json',
-    historyUrl: 'https://roopelele.fi/data/temperature',
+    historyUrl: 'https://roopelele.fi/data/temperature/',
+    configUrl: 'https://roopelele.fi/data/temperature/config.json',
     gitHubUrl: 'https://github.com/roopelele',
     mainUrl: 'https://roopelele.fi/',
   },

@@ -6,7 +6,7 @@ const CurrentTemperatureDisplay = ({ data, names }) => {
       <></>
     )
   }
-  if (data.length === 0 || names.length === 0) {
+  if (data.length <= 1 || names.length === 0) {
     return(
       <></>
     )
