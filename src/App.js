@@ -1,3 +1,5 @@
+import { Container, Grid } from '@material-ui/core'
+
 import './index.css'
 import React from 'react'
 import Main from './main'
@@ -6,14 +8,14 @@ import Footer from './components/footer'
 
 const App = () => {
   return (
-    <>
-      <div className='App'>
+    <Grid style={ { minWidth: '100%' } } container width={1} alignItems='center' justify='center' direction='column'>
+      <Container style={ { minWidth: '100%' } }>
         <Main />
-      </div>
-      <div className='Footer'>
+      </Container>
+      <Container className='Footer' style={ { minWidth: '100%' } } >
         <Footer />
-      </div>
-    </>
+      </Container>
+    </Grid>
   )
 }
 

@@ -3,26 +3,21 @@ import { Line } from 'react-chartjs-2'
 import config from '../utils/config'
 
 const Graph = ({ values, names }) => {
-  if (names === null || values === null || typeof(values) === 'undefined'){
+  const ErrorDisplay = () => {
     return(
       <>
-        <h2>Todays temperature history not found</h2>
+        <h2>Temperature history not found</h2>
       </>
     )
+  }
+  if (names === null || values === null || typeof(values) === 'undefined'){
+    return (<ErrorDisplay/>)
   }
   if (names.length === 0 || values.length === 0) {
-    return(
-      <>
-        <h2>Todays temperature history not found</h2>
-      </>
-    )
+    return (<ErrorDisplay/>)
   }
   if (values[0].times.length === 0 || values[0].temps.length === 0 || names.length === 0) {
-    return(
-      <>
-        <h2>Todays temperature history not found</h2>
-      </>
-    )
+    return (<ErrorDisplay/>)
   }
   const times = values[0].times
   const datasets = values.map((graphValues, idx) => {
@@ -45,8 +40,8 @@ const Graph = ({ values, names }) => {
     padding: '20px',
     maintainAspectRatio: true,
     responsive: true,
-    width: '200',
-    height: '100',
+    width: '300',
+    height: '150',
     scales: {
       yAxes: [
         {
@@ -74,11 +69,9 @@ const Graph = ({ values, names }) => {
   }
 
   return (
-    <>
-      <div className="Chart">
-        <Line data={data} options={options} />
-      </div>
-    </>
+    <div className="Chart">
+      <Line data={data} options={options} />
+    </div>
   )
 }
 

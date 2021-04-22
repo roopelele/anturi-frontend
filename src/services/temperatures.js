@@ -6,21 +6,24 @@ const getCurrent = () => {
   return req.then(response => response.data)
 }
 
-const getToday = (id) => {
+const getToday = (id, day) => {
   if (typeof(id) === 'undefined') {
-    return { data: { data: { temps: [] } } }
+    return { data: { temps: [], times: [], name: id } }
   }
-  var today = new Date()
-  var dd = String(today.getDate()).padStart(2, '0')
-  var mm = String(today.getMonth() + 1).padStart(2, '0') //January is 0!
-  var yyyy = today.getFullYear()
+  var dd = String(day.getDate()).padStart(2, '0')
+  var mm = String(day.getMonth() + 1).padStart(2, '0') //January is 0!
+  var yyyy = day.getFullYear()
 
-  today = yyyy + '-' + mm + '-' + dd
+  var today = yyyy + '-' + mm + '-' + dd
   const req = axios.get(config.urls.historyUrl + today + '_' + id + '.json')
-  return req.then(response => {
-    response.data.name = id
-    return response
-  })
+  return req
+    .then(response => {
+      response.data.name = id
+      return response
+    })
+    .catch(() => {
+      return { data: { temps: [], times: [], name: id } }
+    })
 }
 
 const getConfig = () => {
@@ -28,15 +31,4 @@ const getConfig = () => {
   return req.then(response => response.data)
 }
 
-/*
-const getHistory = ({ start, end }) => {
-  const historyObject = {
-    start: start,
-    end: end,
-  }
-
-  const req = axios.post(config.urls.getDataUrl, historyObject)
-  return req.then(response => response.data)
-}
-*/
 export default { getCurrent, getToday, getConfig }
