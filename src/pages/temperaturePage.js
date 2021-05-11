@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Grid } from '@material-ui/core'
 
 import '../index.css'
 import Graph from '../components/chart.js'
@@ -55,27 +54,29 @@ const TemperaturePage = () => {
   }
 
   return (
-    <Container style={ { minWidth: '100%' } }>
-      <Grid container spacing={1} direction='column' alignItems='center' style={ { minWidth: '100%' } }>
+    <>
+      <div className='TempDisplay'>
         <h1>Current temperatures:</h1>
         <CurrentTemperatureDisplay data={currentData} names={names}/>
-        <Graph values={graphValue} names={names}/>
-      </Grid>
-      <Grid container direction='row' justify='center' alignItems='center'>
-        <Button text='previous' onClick = {() => {
-          const newDay = day
-          newDay.setDate(newDay.getDate() - 1)
-          setDay(newDay)
-          updateGraph({ date: day })
-        }}/>
-        <Button text='next' handleClick = {() => {
-          const newDay = day
-          newDay.setDate(newDay.getDate() + 1)
-          setDay(newDay)
-          updateGraph({ date: day })
-        }}/>
-      </Grid>
-    </Container>
+        <Graph className='TempDisplay' values={graphValue} names={names}/>
+      </div>
+      <table className='Table'>
+        <tr>
+          <Button text='previous' onClick = {() => {
+            const newDay = day
+            newDay.setDate(newDay.getDate() - 1)
+            setDay(newDay)
+            updateGraph({ date: day })
+          }}/>
+          <Button text='next' handleClick = {() => {
+            const newDay = day
+            newDay.setDate(newDay.getDate() + 1)
+            setDay(newDay)
+            updateGraph({ date: day })
+          }}/>
+        </tr>
+      </table>
+    </>
   )
 }
 
