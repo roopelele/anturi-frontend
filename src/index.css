@@ -1,12 +1,12 @@
 body {
-  background: #001224;
+  background: #212529;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #0061BD;
+  color: #6c757d;
 }
 
 code {
@@ -19,17 +19,18 @@ ul li{
 }
 
 .Chart {
-  width: 60%;
-  background-color: #002242;
+  width: 100%;
+  max-width: 1280px;
+  background-color: #343A40;
 }
 
 .Button {
-  appearance: 'ghost';
-  background-color: #002242;
-  color: #0061BD;
-  font-size: calc(10px + 2vmin);
-  border: black;
+  background-color: #343a40;
+  border: none;
+  color: #ADB5BD;
   padding: 10px 10px;
+  text-align: center;
+  font-size: calc(10px + 2vmin);
   border-radius: 5px;
   margin: 10px 0px;
   cursor: pointer;
@@ -39,7 +40,7 @@ ul li{
 .Footer{
   text-align: center;
   position: fixed;
-  background-color: #002242;
+  background-color: #343A40;
   bottom: 0;
   height: 80px;
   width: 100%;

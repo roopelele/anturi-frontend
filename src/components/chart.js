@@ -40,8 +40,6 @@ const Graph = ({ values, names }) => {
     padding: '20px',
     maintainAspectRatio: true,
     responsive: true,
-    width: '300',
-    height: '150',
     scales: {
       yAxes: [
         {

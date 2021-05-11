@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Grid, Button } from '@material-ui/core'
+import { Container, Grid } from '@material-ui/core'
 
+import '../index.css'
 import Graph from '../components/chart.js'
 import CurrentTemperatureDisplay from '../components/current.js'
 import temperatureService from '../services/temperatures.js'
@@ -45,27 +46,34 @@ const TemperaturePage = () => {
     })
   }, [])
 
+  const Button = (props) => {
+    return (
+      <button className='Button' onClick={props.handleClick}>
+        {props.text}
+      </button>
+    )
+  }
+
   return (
     <Container style={ { minWidth: '100%' } }>
-      <Grid container direction='column' alignItems='center' style={ { minWidth: '100%' } }>
+      <Grid container spacing={1} direction='column' alignItems='center' style={ { minWidth: '100%' } }>
         <h1>Current temperatures:</h1>
         <CurrentTemperatureDisplay data={currentData} names={names}/>
         <Graph values={graphValue} names={names}/>
       </Grid>
-      <Grid container direction='row' justify='space-evenly' alignItems='center'>
-        <Button variant='contained' onClick = {() => {
+      <Grid container direction='row' justify='center' alignItems='center'>
+        <Button text='previous' onClick = {() => {
           const newDay = day
           newDay.setDate(newDay.getDate() - 1)
           setDay(newDay)
           updateGraph({ date: day })
-        }}>previous
-        </Button>
-        <Button variant='contained' onClick = {() => {
+        }}/>
+        <Button text='next' handleClick = {() => {
           const newDay = day
           newDay.setDate(newDay.getDate() + 1)
           setDay(newDay)
           updateGraph({ date: day })
-        }}>next</Button>
+        }}/>
       </Grid>
     </Container>
   )

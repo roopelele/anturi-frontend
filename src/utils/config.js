@@ -7,7 +7,7 @@ const config = {
     mainUrl: 'https://roopelele.fi/',
   },
   colors: {
-    grid: '#224A70',
+    grid: '#495057',
     background: [
       'rgb(0, 97, 189)',
       'rgb(50, 130, 0)',
