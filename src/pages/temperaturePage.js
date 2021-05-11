@@ -60,22 +60,19 @@ const TemperaturePage = () => {
         <CurrentTemperatureDisplay data={currentData} names={names}/>
         <Graph className='TempDisplay' values={graphValue} names={names}/>
       </div>
-      <table className='Table'>
-        <tr>
-          <Button text='previous' onClick = {() => {
-            const newDay = day
-            newDay.setDate(newDay.getDate() - 1)
-            setDay(newDay)
-            updateGraph({ date: day })
-          }}/>
-          <Button text='next' handleClick = {() => {
-            const newDay = day
-            newDay.setDate(newDay.getDate() + 1)
-            setDay(newDay)
-            updateGraph({ date: day })
-          }}/>
-        </tr>
-      </table>
+      <Button text='previous' handleClick = {() => {
+        console.log(-1)
+        const newDay = day
+        newDay.setDate(newDay.getDate() - 1)
+        setDay(newDay)
+        updateGraph({ date: day })
+      }}/>
+      <Button text='next' handleClick = {() => {
+        const newDay = day
+        newDay.setDate(newDay.getDate() + 1)
+        setDay(newDay)
+        updateGraph({ date: day })
+      }}/>
     </>
   )
 }
