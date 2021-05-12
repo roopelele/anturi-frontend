@@ -5,6 +5,7 @@ const config = {
     configUrl: 'https://roopelele.fi/data/temperature/config.json',
     gitHubUrl: 'https://github.com/roopelele',
     mainUrl: 'https://roopelele.fi/',
+    temperatureUrl: 'https://roopelele.fi/temperatures',
   },
   colors: {
     grid: '#495057',
