@@ -7,6 +7,16 @@ const config = {
     mainUrl: 'https://roopelele.fi/',
     temperatureUrl: 'https://roopelele.fi/temperatures',
   },
+  menuItems: [
+    {
+      text: 'front page',
+      url: 'https://roopelele.fi/'
+    },
+    {
+      text: 'temperatures',
+      url: 'https://roopelele.fi/temperatures'
+    }
+  ],
   colors: {
     grid: '#495057',
     background: [
