@@ -36,39 +36,9 @@ const Graph = ({ values, names }) => {
     datasets: datasets
   }
 
-  const options = {
-    padding: '20px',
-    maintainAspectRatio: true,
-    responsive: true,
-    scales: {
-      yAxes: [
-        {
-          ticks: {
-            suggestedMin: config.graph.yMin,
-            suggestedMax: config.graph.yMax,
-          },
-          gridLines: {
-            color: config.colors.grid,
-          }
-        }
-      ],
-      xAxes: [
-        {
-          gridLines: {
-            color: config.colors.grid,
-          }
-        }
-      ]
-    },
-    legend: {
-      position: config.graph.legend.pos,
-      align: config.graph.legend.alignment,
-    }
-  }
-
   return (
     <div className="Chart">
-      <Line data={data} options={options} />
+      <Line data={data} options={config.graph.options} />
     </div>
   )
 }

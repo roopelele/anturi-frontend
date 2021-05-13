@@ -29,13 +29,40 @@ const config = {
     ]
   },
   graph: {
-    yMin: 15.0,
-    yMax: 30.0,
-    legend: {
-      pos: 'top',
-      alignment: 'start',
-    },
-    pointRadius: 1,
+    pointRadius: 0,
+    options: {
+      padding: '20px',
+      responsive: true,
+      maintainAspectRatio: true,
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              suggestedMin: 15.0,
+              suggestedMax: 30.0,
+            },
+            gridLines: {
+              color: '#495057',
+            }
+          }
+        ],
+        xAxes: [
+          {
+            ticks: {
+              min: 0,
+              max: 1440,
+            },
+            gridLines: {
+              color: '#495057',
+            }
+          }
+        ]
+      },
+      legend: {
+        position: 'top',
+        align: 'start',
+      }
+    }
   },
   messages: {
     noData: 'no data',

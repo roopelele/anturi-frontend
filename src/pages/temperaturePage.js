@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import '../index.css'
 import Graph from '../components/chart.js'
+import Button from '../components/buttons'
 import CurrentTemperatureDisplay from '../components/current.js'
 import temperatureService from '../services/temperatures.js'
 import config from '../utils/config'
@@ -45,14 +46,6 @@ const TemperaturePage = () => {
     })
   }, [])
 
-  const Button = (props) => {
-    return (
-      <button className='Button' onClick={props.handleClick}>
-        {props.text}
-      </button>
-    )
-  }
-
   return (
     <>
       <div className='TempDisplay'>
@@ -61,12 +54,12 @@ const TemperaturePage = () => {
         <Graph className='TempDisplay' values={graphValue} names={names}/>
       </div>
       <Button text='previous' handleClick = {() => {
-        console.log(-1)
         const newDay = day
         newDay.setDate(newDay.getDate() - 1)
         setDay(newDay)
         updateGraph({ date: day })
       }}/>
+      {' '}
       <Button text='next' handleClick = {() => {
         const newDay = day
         newDay.setDate(newDay.getDate() + 1)

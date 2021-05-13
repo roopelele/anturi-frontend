@@ -68,7 +68,7 @@ ul li{
 
 .Menu{
   width: 200px;
-  height: 100%;
+  min-height: 0;
   background-color: #343A40;
   position: fixed;
   left: 0;
@@ -84,14 +84,20 @@ ul li{
 .MenuButton{
   background-color: #343a40;
   color: #ADB5BD;
-  border: none;
+  border-color: black;
+  border-radius: 2px;
+  border-style: solid hidden;
   text-align: center;
   font-size: calc(10px + 1vmin);
-  border-radius: 1px;
   margin: 0px 0px;
   cursor: pointer;
   width: 200px;
   height: 50px;
+}
+
+.MenuButton:hover{
+  background-color: #ADB5BD;
+  color:#212529;
 }
 
 .EntryButton{
@@ -109,11 +115,4 @@ ul li{
 .EntryButton:hover {
   background-color: #ADB5BD;
   color:#212529;
-  border: none;
-  text-align: left;
-  font-size: calc(10px + 1vmin);
-  border-radius: 1px;
-  margin: 0px 0px;
-  cursor: pointer;
-  width: 200px;
 }

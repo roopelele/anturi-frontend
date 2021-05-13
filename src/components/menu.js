@@ -9,29 +9,21 @@ const Menu = () => {
     setVisible(!visible)
   }
 
-  const List = () => {
-    if (visible) {
-      return (
-        <div className='Menu'>
-          <input type='button' value='menu' className='MenuButton' onClick={toggleVisible}/>
-          {config.menuItems.map(x => <input key={x.url} type='button' value={x.text} className='EntryButton' onClick={() => window.location.href = x.url}/> ) }
-        </div>
-      )
-    }
-    else {
-      return (
-        <div className='Empty'>
-          <input type='button' value='menu' className='MenuButton' onClick={toggleVisible}/>
-        </div>
-      )
-    }
+  if (visible) {
+    return (
+      <div className='Menu'>
+        <input type='button' value='menu' className='MenuButton' onClick={toggleVisible}/>
+        {config.menuItems.map(x => <input key={x.url} type='button' value={x.text} className='EntryButton' onClick={() => window.location.href = x.url}/> ) }
+      </div>
+    )
   }
-
-  return (
-    <>
-      <List/>
-    </>
-  )
+  else {
+    return (
+      <div className='Empty'>
+        <input type='button' value='menu' className='MenuButton' onClick={toggleVisible}/>
+      </div>
+    )
+  }
 }
 
 export default Menu
