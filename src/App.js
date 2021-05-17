@@ -5,9 +5,10 @@ import Footer from './components/footer'
 import Menu from './components/menu'
 
 const App = () => {
+  const m = window.innerWidth < window.innerHeight
   return (
     <>
-      <Menu/>
+      <Menu mobile={m}/>
       <div className='Main'>
         <Main className='Main'/>
       </div>

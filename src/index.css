@@ -74,11 +74,10 @@ ul li{
   left: 0;
 }
 
-.Empty{
-  width: 100;
-  height: 40;
-  position: fixed;
-  left: 0;
+.Menu_m{
+  width: 100%;
+  min-height: 0;
+  background-color: #343A40;
 }
 
 .MenuButton{
@@ -100,6 +99,25 @@ ul li{
   color:#212529;
 }
 
+.MenuButton_m{
+  background-color: #343a40;
+  color: #ADB5BD;
+  border-color: black;
+  border-radius: 2px;
+  border-style: solid hidden;
+  text-align: left;
+  font-size: calc(30px + 1vmin);
+  margin: 0px 0px;
+  cursor: pointer;
+  width: 100%;
+  height: 50px;
+}
+
+.MenuButton_m:hover{
+  background-color: #ADB5BD;
+  color:#212529;
+}
+
 .EntryButton{
   background-color: #343a40;
   color: #ADB5BD;
@@ -113,6 +131,23 @@ ul li{
 }
 
 .EntryButton:hover {
+  background-color: #ADB5BD;
+  color:#212529;
+}
+
+.EntryButton_m{
+  background-color: #343a40;
+  color: #ADB5BD;
+  border: none;
+  text-align: left;
+  font-size: calc(20px + 1vmin);
+  border-radius: 1px;
+  margin: 0px 0px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.EntryButton_m:hover {
   background-color: #ADB5BD;
   color:#212529;
 }
