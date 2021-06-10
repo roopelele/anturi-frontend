@@ -61,6 +61,10 @@ const config = {
       legend: {
         position: 'top',
         align: 'start',
+      },
+      title: {
+        display: true,
+        position: 'bottom'
       }
     }
   },

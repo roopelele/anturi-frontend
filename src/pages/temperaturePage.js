@@ -51,7 +51,7 @@ const TemperaturePage = () => {
       <div className='TempDisplay'>
         <h1>Current temperatures:</h1>
         <CurrentTemperatureDisplay data={currentData} names={names}/>
-        <Graph className='TempDisplay' values={graphValue} names={names}/>
+        <Graph className='TempDisplay' values={graphValue} names={names} title={day.toDateString()}/>
       </div>
       <Button text='previous' handleClick = {() => {
         const newDay = day
