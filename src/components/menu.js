@@ -9,18 +9,27 @@ const Menu = (props) => {
     setVisible(!visible)
   }
 
-  if (visible) {
-    return (
-      <div className={props.mobile ? 'Menu_m' : 'Menu'}>
-        <input type='button' value='menu' className={props.mobile ? 'MenuButton_m' : 'MenuButton'} onClick={toggleVisible}/>
-        {config.menuItems.map(x => <input key={x.url} type='button' value={x.text} className={props.mobile ? 'EntryButton_m' : 'EntryButton'} onClick={() => window.location.href = x.url}/> ) }
-      </div>
-    )
+  if (props.mobile) {
+    if (visible) {
+      return (
+        <div className='Menu'>
+          <input type='button' value='menu' className={props.mobile ? 'MenuButton_m' : 'MenuButton'} onClick={toggleVisible}/>
+          {config.menuItems.map(x => <input key={x.url} type='button' value={x.text} className={props.mobile ? 'EntryButton_m' : 'EntryButton'} onClick={() => window.location.href = x.url}/> ) }
+        </div>
+      )
+    }
+    else {
+      return (
+        <div className='Menu'>
+          <input type='button' value='menu' className={props.mobile ? 'MenuButton_m' : 'MenuButton'} onClick={toggleVisible}/>
+        </div>
+      )
+    }
   }
   else {
     return (
-      <div className={props.mobile ? 'Menu_m' : 'Menu'}>
-        <input type='button' value='menu' className={props.mobile ? 'MenuButton_m' : 'MenuButton'} onClick={toggleVisible}/>
+      <div className='Menu'>
+        {config.menuItems.map(x => <input key={x.url} type='button' value={x.text} className={props.mobile ? 'EntryButton_m' : 'EntryButton'} onClick={() => window.location.href = x.url}/> ) }
       </div>
     )
   }
