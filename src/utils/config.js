@@ -4,17 +4,17 @@ const config = {
     historyUrl: 'https://roopelele.fi/data/temperature/',
     configUrl: 'https://roopelele.fi/data/temperature/config.json',
     gitHubUrl: 'https://github.com/roopelele',
-    mainUrl: 'https://roopelele.fi/',
-    temperatureUrl: 'https://roopelele.fi/temperatures',
+    mainUrl: '/',
+    temperatureUrl: '/temperatures',
   },
   menuItems: [
     {
       text: 'front page',
-      url: 'https://roopelele.fi/'
+      url: '/'
     },
     {
       text: 'temperatures',
-      url: 'https://roopelele.fi/temperatures'
+      url: '/temperatures'
     }
   ],
   colors: {

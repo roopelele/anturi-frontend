@@ -16,3 +16,14 @@ npm start
 ```
 npm run build
 ```
+
+## Docker
+
+- Build the image:
+```
+docker build -t webserver .
+```
+- Run the image:
+```
+docker run --rm --network host -p 80:80 -v $PWD/build:/usr/share/nginx/html webserver
+```
