@@ -10,21 +10,30 @@ body {
   top: 0;
 }
 
-ul li{
-  font-size:30px;
+ul li {
+  font-size: 30px;
+  text-align: center;
 }
 
-.Main{
+.Main {
   background: #212529;
   color: #6c757d;
   text-align: center;
-  height: calc(100vh - 80px);
-  top: 0;
   width: 100%;
   margin: 0 auto;
+  padding-bottom: 80px;
 }
 
-.TempDisplay{
+.Footer {
+  text-align: center;
+  background-color: #343a40;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.TempDisplay {
   background: #212529;
   color: #6c757d;
   text-align: center;
@@ -37,13 +46,13 @@ ul li{
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  background-color: #343A40;
+  background-color: #343a40;
 }
 
 .Button {
   background-color: #343a40;
   border: none;
-  color: #ADB5BD;
+  color: #adb5bd;
   padding: 10px 10px;
   text-align: center;
   font-size: calc(10px + 2vmin);
@@ -53,28 +62,22 @@ ul li{
   width: 200px;
 }
 
-.Footer{
-  text-align: center;
-  position: fixed;
-  background-color: #343A40;
-  bottom: 0;
-  height: 80px;
-  width: 100%;
-}
-
-.Table{
+.Table {
   margin: 0 auto;
 }
 
-.Menu{
+.Menu {
+  position: sticky;
+  top: 0;
+  text-align: left;
   width: 100%;
   min-height: 0;
-  background-color: #343A40;
+  background-color: #343a40;
 }
 
-.MenuButton{
+.MenuButton {
   background-color: #343a40;
-  color: #ADB5BD;
+  color: #adb5bd;
   border-style: hidden;
   text-align: center;
   font-size: calc(10px + 1vmin);
@@ -84,14 +87,14 @@ ul li{
   height: 50px;
 }
 
-.MenuButton:hover{
-  background-color: #ADB5BD;
-  color:#212529;
+.MenuButton:hover {
+  background-color: #adb5bd;
+  color: #212529;
 }
 
-.MenuButton_m{
+.MenuButton_m {
   background-color: #343a40;
-  color: #ADB5BD;
+  color: #adb5bd;
   border: none;
   text-align: center;
   font-size: calc(30px + 1vmin);
@@ -101,14 +104,14 @@ ul li{
   height: 50px;
 }
 
-.MenuButton_m:hover{
-  background-color: #ADB5BD;
-  color:#212529;
+.MenuButton_m:hover {
+  background-color: #adb5bd;
+  color: #212529;
 }
 
-.EntryButton{
+.EntryButton {
   background-color: #343a40;
-  color: #ADB5BD;
+  color: #adb5bd;
   border-color: black;
   border-radius: 2px;
   border-style: hidden solid hidden hidden;
@@ -122,13 +125,13 @@ ul li{
 }
 
 .EntryButton:hover {
-  background-color: #ADB5BD;
-  color:#212529;
+  background-color: #adb5bd;
+  color: #212529;
 }
 
-.EntryButton_m{
+.EntryButton_m {
   background-color: #343a40;
-  color: #ADB5BD;
+  color: #adb5bd;
   border-color: black;
   border-radius: 2px;
   border-style: solid hidden hidden hidden;
@@ -141,6 +144,6 @@ ul li{
 }
 
 .EntryButton_m:hover {
-  background-color: #ADB5BD;
-  color:#212529;
+  background-color: #adb5bd;
+  color: #212529;
 }
