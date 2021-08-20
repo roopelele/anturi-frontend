@@ -15,6 +15,14 @@ const config = {
     {
       text: 'temperatures',
       url: '/temperatures'
+    },
+    {
+      text: 'images',
+      url: '/images'
+    },
+    {
+      text: 'videos',
+      url: '/videos'
     }
   ],
   colors: {
