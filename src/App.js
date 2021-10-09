@@ -1,23 +1,21 @@
 import './index.css'
 import React from 'react'
-import Main from './main'
-import Footer from './components/footer'
-import Menu from './components/menu'
+import { Switch, Route, Redirect } from 'react-router-dom'
+
+import MainPage from './pages/mainPage'
+import TemperaturePage from './pages/temperaturePage'
 
 window.language = navigator.language || navigator.userLanguage
 
 const App = () => {
-  const m = window.innerWidth < window.innerHeight
   return (
-    <>
-      <div className='Main'>
-        <Menu mobile={m}/>
-        <Main className='Main'/>
-      </div>
-      <div className='Footer' >
-        <Footer />
-      </div>
-    </>
+    <Switch>
+      {' '}
+      {/* The Switch decides which component to show based on the current URL.*/}
+      <Route exact path='/' component={MainPage}></Route>
+      <Route exact path='/temperatures' component={TemperaturePage}></Route>
+      <Redirect to='/404' />
+    </Switch>
   )
 }
 
