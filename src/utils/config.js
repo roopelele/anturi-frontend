@@ -6,6 +6,7 @@ const config = {
     gitHubUrl: 'https://github.com/roopelele',
     mainUrl: '/',
     temperatureUrl: '/temperatures',
+    url404: 'https://roopelele.fi/404'
   },
   menuItems: [
     {
@@ -18,23 +19,17 @@ const config = {
     },
     {
       text: 'images',
-      url: '/images'
+      url: 'https://roopelele.fi/images/'
     },
     {
       text: 'videos',
-      url: '/videos'
+      url: 'https://roopelele.fi/videos/'
     }
   ],
   colors: {
     grid: '#495057',
-    background: [
-      'rgb(0, 97, 189)',
-      'rgb(50, 130, 0)',
-    ],
-    border: [
-      'rgba(0, 97, 189, 0.5)',
-      'rgba(50, 130, 0, 0.5)',
-    ]
+    background: ['rgb(0, 97, 189)', 'rgb(50, 130, 0)'],
+    border: ['rgba(0, 97, 189, 0.5)', 'rgba(50, 130, 0, 0.5)']
   },
   graph: {
     pointRadius: 0,
@@ -47,10 +42,10 @@ const config = {
           {
             ticks: {
               suggestedMin: 15.0,
-              suggestedMax: 30.0,
+              suggestedMax: 30.0
             },
             gridLines: {
-              color: '#495057',
+              color: '#495057'
             }
           }
         ],
@@ -58,17 +53,17 @@ const config = {
           {
             ticks: {
               min: 0,
-              max: 1440,
+              max: 1440
             },
             gridLines: {
-              color: '#495057',
+              color: '#495057'
             }
           }
         ]
       },
       legend: {
         position: 'top',
-        align: 'start',
+        align: 'start'
       },
       title: {
         display: true,
@@ -77,13 +72,13 @@ const config = {
     }
   },
   messages: {
-    noData: 'no data',
+    noData: 'no data'
   },
   styles: {
     center: {
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: 'center'
     }
   }
 }
